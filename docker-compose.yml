@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docs
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/logs:/var/log/nginx
+      - ./data:/data/uploads # 映射上传文件目录
+    ports:
+      - '80:80'
+    networks:
+      - nginx-network
+
+networks:
+  nginx-network:
+    driver: bridge

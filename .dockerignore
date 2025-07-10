@@ -1,0 +1,33 @@
+# 忽略数据目录
+data/
+data/*
+
+# 忽略 nginx 相关
+nginx
+nginx/logs/
+nginx/logs/*
+
+# Node.js
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# 构建输出
+dist
+.vitepress/dist
+.vitepress/cache
+
+# 开发工具和配置文件
+.git
+.gitignore
+.env
+.env.*
+.idea
+.vscode
+*.md
+.DS_Store
+
+# Docker 相关
+Dockerfile
+docker-compose.yml
